@@ -1,5 +1,5 @@
 # alpha-Nego
-alpha$-Nego: Self-play Deep Reinforcement Learning for Negotiation based on Natural Language
+alpha-Nego: Self-play Deep Reinforcement Learning for Negotiation based on Natural Language
 Implements our alpha$-Nego algorithms.
 A more clear code with proper instruction will be available soon here. 
 
@@ -15,8 +15,6 @@ python==3.5.6, pytorch==1.1.0
 ```shell
 conda create --name <env> --file conda_requirements.txt
 ```
-1. install pytorch
-
 
 2. pip install additional dependencies
 ```shell
@@ -41,25 +39,25 @@ PYTHONPATH=. python core/price_tracker.py --train-examples-path data/train-luis-
 bash craigslistbargain/exp_scripts/identifier/old/train_sl.sh
 ```
 ### Train A2C Agent
-- Generate scenarios
+Generate scenarios
 ```shell
 PYTHONPATH=. python ../scripts/chat_to_scenarios.py --chats data/train-luis-post.json --scenarios data/train-scenarios.json
 PYTHONPATH=. python ../scripts/chat_to_scenarios.py --chats data/dev-luis-post.json --scenarios data/dev-scenarios.json
 ```
-- Train the RL model 
+Train the RL model 
 ```shell
 bash exp_scripts/rl/train_a2c.sh
 ```
 ### Train ToM model
-- Sample data
+Sample data
 ```shell
 bash exp_scripts/identifier/sample_data.sh
 ```
-- Implicit Model
+Implicit Model
 ```shell
 bash exp_scripts/identifier/train_uttr_history_tom.sh
 ```
-- Explicit Model
+Explicit Model
 ```shell
 bash exp_scripts/identifier/train_uttr_id_history_tom.sh
 ```
@@ -70,28 +68,28 @@ bash exp_scripts/rl/train_nego.sh
 
 ### Evaluate result of different model.
 
-- Rule Model
+Rule Model
 ```shell
 bash exp_scripts/rl/eval_rule.sh
 ```
-- SL Model
+SL Model
 ```shell
 bash exp_scripts/rl/eval_sl.sh
 ```
-- A2C Model
+A2C Model
 ```shell
 bash exp_scripts/rl/eval_rl.sh
 ```  
-- Implicit ToM Model
+Implicit ToM Model
 ```shell
 bash exp_scripts/rl/eval_tom_noid.sh
 ```
-- Explicit ToM Model
+Explicit ToM Model
 ```shell
 bash exp_scripts/rl/eval_tom.sh
 ```
 
-- alpha-Nego Model
+alpha-Nego Model
 ```shell
 bash exp_scripts/rl/eval_nego.sh
 ```  
